@@ -1,0 +1,14 @@
+.flex-contain{
+    display: flex;
+    margin: 10px;
+    backg
+}
+
+.oneContain{
+    flex: 7;
+}
+
+
+.secondContain{
+    flex: 5;
+}

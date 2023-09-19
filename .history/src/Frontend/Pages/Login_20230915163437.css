@@ -1,0 +1,13 @@
+.flex-contain{
+    display: flex;
+    ma
+}
+
+.oneContain{
+    flex: 7;
+}
+
+
+.secondContain{
+    flex: 5;
+}

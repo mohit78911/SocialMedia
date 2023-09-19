@@ -1,0 +1,72 @@
+import React, { useState } from "react";
+import "./Activity.css";
+import DialogBoxUsers from "./DialogBoxUsers";
+
+
+
+export default function Activity({ userData }) {
+  const [details, setDetails] = useState([]);
+  console.log("userDetails", details);
+
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <div>
+        {userData.map((value, i) => {
+          return (
+            <div
+              key={i}
+              className="activityContainer"
+              onClick={() => setDetails(value)}
+            >
+              <img src={value.userprofile} className="imgprofile" />
+              <span className="userName">
+                <b>{value.name.toUpperCase()}</b>
+              </span>
+            </div>
+          );
+        })}
+        <div>
+          <Button variant="outlined" onClick={handleClickOpen}>
+        Open
+      </Button>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"Users Details"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            here's you see users details and some prosonal informations.
+            {details && (
+              <div className="userDetailsContainer">
+                <img src={details.userprofile} width={50} className="img" />
+                <div>{details.name}</div>
+                <div>{details.email}</div>
+                <div>{details.password}</div>
+              </div>
+            )}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+      </div>
+    </div>
+  );
+}

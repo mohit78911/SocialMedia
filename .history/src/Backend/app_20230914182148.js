@@ -1,0 +1,12 @@
+const express = require('express')
+const Data =  require('./Data')
+const mongoose = require('mongoose')
+const bodyParser = require("body-parser")
+const jsonParser = bodyParser.json()
+const app = express()
+const port  = process.env.PORT || 3500
+
+mongoose.connect('mongodb+srv://root:root@cluster0.au0wghs.mongodb.net/demo?retryWrites=true&w=majority')
+
+
+app.get((req,res))

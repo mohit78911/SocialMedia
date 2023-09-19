@@ -1,0 +1,19 @@
+.flex-contain {
+    display: flex;
+    margin: 10vh;
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 7px;
+}
+
+.oneContain {
+    flex: 7;
+    
+}
+.imglogin{
+    border-radius: 7px;
+}
+
+
+.secondContain {
+    flex: 5;
+}

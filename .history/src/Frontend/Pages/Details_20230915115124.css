@@ -1,0 +1,23 @@
+.Account {
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+
+
+}
+
+.buttons-container {
+    display: grid;
+
+}
+
+.buttons {
+    color: black;
+
+}
+
+.accountTitle {
+    text-align: left;
+    opacity: 0.4;
+    font-weight: bold;
+}

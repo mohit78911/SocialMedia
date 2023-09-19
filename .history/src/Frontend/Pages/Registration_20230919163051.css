@@ -1,0 +1,17 @@
+
+
+
+
+.register{
+    display: flex;
+    justify-content: center;
+}
+
+.firstContainer{
+    flex: 5;
+    border: 1px solid black;
+}
+.secondContainer{
+    flex: 7;
+    border: 1px solid black;
+}

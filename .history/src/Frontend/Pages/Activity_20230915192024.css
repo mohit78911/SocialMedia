@@ -1,0 +1,17 @@
+
+
+
+
+
+
+.activityContainer{
+background: white;
+margin: 10px;
+border-radius: 8px;
+display: flex;
+}
+
+.imgprofile{
+    width: 60px;
+    border-radius: 50%;
+}

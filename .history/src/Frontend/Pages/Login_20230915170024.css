@@ -1,0 +1,34 @@
+.flex-contain {
+    display: flex;
+    margin: 13vh;
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 7px;
+}
+
+.oneContain {
+    flex: 7;
+
+}
+
+.imglogin {
+    border-radius: 7px;
+}
+
+
+.secondContain {
+    flex: 5;
+}
+
+.loginContainer {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.inputText{
+    
+}
+.textLogin {
+    margin-top: 8vh;
+    text-align: left;
+}

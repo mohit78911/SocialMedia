@@ -1,0 +1,28 @@
+
+
+
+
+
+
+.activityContainer{
+background: white;
+margin: 10px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+.imgprofile{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.userName{
+    display: block;
+}
+@media (max-width : 600px){
+    .userName{
+        display: none;
+    }
+}

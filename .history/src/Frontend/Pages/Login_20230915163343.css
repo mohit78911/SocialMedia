@@ -1,0 +1,12 @@
+.flex-contain{
+    display: flex;
+}
+
+.oneContain{
+    flex: 8;
+}
+
+
+.sContain{
+    flex: 8;
+}

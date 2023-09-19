@@ -1,0 +1,22 @@
+import React, { useState } from "react";
+import "./Feed.css";
+
+export default function Feed() {
+  const [inputData, setInputData] = useState("");
+  return (
+    <div>
+      <div className="postfeed">
+        <div style={{ padding: "10px" }}>
+          <div className="inputBox">
+            <img
+            <input
+              className="input"
+              value={inputData}
+              onChange={(e) => setInputData(e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

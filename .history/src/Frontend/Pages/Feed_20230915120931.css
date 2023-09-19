@@ -1,0 +1,18 @@
+
+
+
+
+ .postfeed{
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+ }
+ .inputBox{
+    
+ }
+ .input{
+    border: none;
+ }
+ .input:focus{
+    outline: none;
+ }

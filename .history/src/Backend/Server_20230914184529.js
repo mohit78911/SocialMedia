@@ -1,0 +1,2 @@
+cnst
+require("./app")

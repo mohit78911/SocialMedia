@@ -1,0 +1,14 @@
+
+
+
+
+.register{
+    display: flex;
+}
+
+.firstContainer{
+    flex: 5;
+}
+.secondContainer{
+    flex: 7;
+}
