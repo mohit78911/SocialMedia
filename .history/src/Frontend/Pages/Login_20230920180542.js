@@ -8,7 +8,7 @@ export default function Login({ userData }) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading,setLoading] = useState(false)
 
   const visiblePassword = () => {
     setShowPassword(!showPassword);
@@ -30,12 +30,11 @@ export default function Login({ userData }) {
       toast("Password must be 6 charactes");
     } else {
       if (filterData.length) {
-        setLoading(true);
+        setLoading(true)
         toast.success("Welcome!!", { position: "top-right" });
         localStorage.setItem("userLoginData", JSON.stringify([filterData]));
         setTimeout(() => {
           location("/home");
-          setLoading(false);
         }, 3000);
       } else {
         toast.error("Invalid Details", { position: "top-right" });
@@ -95,16 +94,8 @@ export default function Login({ userData }) {
               onClick={visiblePassword}
               color="warning"
             />
-            <Typography className="showpassword">Show Password</Typography>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              {loading ? (
-                <Box
-                  component="img"
-                  src="https://usagif.com/wp-content/uploads/loading-29.gif"
-                  width={50}
-                />
-              ) : null}
-            </Box>
+            <Typography className='showpassword'>Show Password</Typography>
+            <Box></Box>
             <Box>
               <button className="loginbtn" onClick={addDataHandler}>
                 Login

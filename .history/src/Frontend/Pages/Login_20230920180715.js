@@ -35,7 +35,6 @@ export default function Login({ userData }) {
         localStorage.setItem("userLoginData", JSON.stringify([filterData]));
         setTimeout(() => {
           location("/home");
-          setLoading(false);
         }, 3000);
       } else {
         toast.error("Invalid Details", { position: "top-right" });
@@ -96,7 +95,7 @@ export default function Login({ userData }) {
               color="warning"
             />
             <Typography className="showpassword">Show Password</Typography>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box>
               {loading ? (
                 <Box
                   component="img"
