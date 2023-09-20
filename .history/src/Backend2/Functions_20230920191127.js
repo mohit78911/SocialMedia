@@ -65,7 +65,7 @@ const signin = async (req, res) => {
       },
       "hellothisismohitsutharfromrajasthan"
     );
-    
+    localStorage.setItem("token", JSON.stringify([]));
     res.status(201).json({
       UserProfile_Accessed: existinguser,
       token: token,

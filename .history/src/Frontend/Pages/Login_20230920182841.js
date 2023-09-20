@@ -33,10 +33,10 @@ export default function Login({ userData }) {
         setLoading(true);
         toast.success("Welcome!!", { position: "top-right" });
         localStorage.setItem("userLoginData", JSON.stringify([filterData]));
-        setTimeout(() => {
-          location("/home");
-          setLoading(false);
-        }, 3000);
+        // setTimeout(() => {
+        //   location("/home");
+        //   setLoading(false);
+        // }, 3000);
       } else {
         toast.error("Invalid Details", { position: "top-right" });
       }

@@ -103,23 +103,9 @@ export default function Login({ userData }) {
                   src="https://usagif.com/wp-content/uploads/loading-29.gif"
                   width={50}
                 />
-              ) : (
-                <Box>
-                  <button className="loginbtn" onClick={addDataHandler}>
-                    Login
-                  </button>
-                  <Typography
-                    className="mt-3 switchpage"
-                    sx={{ opacity: "0.8" }}
-                  >
-                    Don't have Account{" "}
-                    <NavLink className="linktag" to="/register">
-                      ClickHere!
-                    </NavLink>
-                  </Typography>
-                </Box>
-              )}
+              ) : null}
             </Box>
+            
           </Box>
         </Box>
       </Box>

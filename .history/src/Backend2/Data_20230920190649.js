@@ -8,7 +8,7 @@ let newData = new mongoose.Schema({
   lastseen: String,
   imgpost: String,
   userprofile: String,
-  // like: Number++,
-  // unlike: Number--,
+  like: Number++,
+  unlike : Numb
 });
 module.exports = mongoose.model("Data", newData);

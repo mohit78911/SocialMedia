@@ -76,7 +76,7 @@ export default function Feed({ userData, like, setLike }) {
       {/* user's data */}
       <Box>
         {userData.map((value, i) => {
-          console.log("id", value._id);
+          console.log("id",value.id)
           return (
             <Box key={i}>
               <Box className="userField">
@@ -90,6 +90,7 @@ export default function Feed({ userData, like, setLike }) {
 
                   <Box>
                     <Typography>{value.name.toUpperCase()}</Typography>
+                    
 
                     <Typography style={{ opacity: "0.5" }}>
                       {value.lastseen}
@@ -100,10 +101,7 @@ export default function Feed({ userData, like, setLike }) {
                   <Box component="img" src={value.imgpost} width={"100%"} />
                 </Box>
                 <Box className="likebtnsContainer">
-                  <Button
-                    className="likebtn"
-                    onClick={() => setCount(count + 1)}
-                  >
+                  <Button className="likebtn" onClick={() => setCount(count + 1)}>
                     <FavoriteBorderIcon />
                     {count}
                   </Button>
