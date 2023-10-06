@@ -1,0 +1,16 @@
+.inputfields {
+    display: table-caption;
+    text-align: center;
+}
+.containe{
+    display: flex;
+}
+.updateinput {
+    border: none;
+    margin: 10px;
+    text-align: center;
+}
+
+.updateinput:focus {
+    outline: none;
+}

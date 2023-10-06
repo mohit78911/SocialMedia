@@ -1,0 +1,12 @@
+.inputfields {
+    display: table-caption;
+}
+
+.updateinput {
+    border: none;
+    ma
+}
+
+.updateinput:focus {
+    outline: none;
+}

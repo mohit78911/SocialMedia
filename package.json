@@ -2,7 +2,7 @@
   "name": "socialmedia",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5500",
+  "proxy": "http://localhost:6600",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -16,6 +16,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-horizontal-scrolling-menu": "^4.1.0",

@@ -1,0 +1,31 @@
+.Account {
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px rgb(196, 196, 196);
+
+
+}
+
+.buttons-container {
+    display: grid;
+
+}
+
+.buttons {
+    color: black;
+
+}
+
+.accBtn {
+    display: block;
+}
+
+@media(max-width : 790px) {
+    .accBtn {
+        display: none;
+    color: rgb(148, 37, 37);
+    }
+}
+
+ 
