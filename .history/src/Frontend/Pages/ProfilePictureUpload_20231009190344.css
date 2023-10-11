@@ -1,0 +1,24 @@
+
+
+
+.inputfields {
+    display: table-caption;
+    text-align: center;
+    width: auto;
+}
+
+.containe {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.updateinput {
+    border: none;
+    margin: 10px;
+    text-align: center;
+}
+
+.updateinput:focus {
+    outline: none;
+}

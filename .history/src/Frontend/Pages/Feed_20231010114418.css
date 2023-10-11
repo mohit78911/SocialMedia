@@ -1,0 +1,119 @@
+.postfeed {
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px rgb(196, 196, 196);
+
+}
+
+.inputBox {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgb(211, 211, 211, 0.4);
+    margin: 15px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.image {
+    border-radius: 50%;
+}
+
+.input {
+    border: none;
+    padding: 10px;
+    width: -webkit-fill-available;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    text-align: center;
+}
+
+.ActivityButtons 
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    padding: 15px;
+
+
+}
+
+
+.centerActivityBtn {}
+
+.activitybtn {
+    border: none;
+    background: none;
+    margin: 1px;
+    color: rgb(148, 148, 148);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iconpen {
+    padding-top: 18px;
+    text-align: left;
+    padding-left: 3vh;
+    display: flex;
+    align-items: center;
+}
+
+.userField {
+    background: white;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 0px 30px rgb(196, 196, 196);
+}
+
+.topBar {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.profile {
+    border-radius: 100%;
+}
+
+.feedimg {
+    background-color: white;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(158, 158, 158);
+    overflow: hidden;
+}
+
+.likebtn {
+    border: none;
+    background: none;
+    color: rgb(110, 197, 255);
+}
+
+.likebtnsContainer {
+    text-align: left;
+    margin-left: 3vh;
+}
+
+.addpostdialog {
+    margin-top: 2vh;
+    display: grid;
+    padding: 5px;
+}
+
+.uploadbtn {
+    display: block;
+}
+
+
+@media(max-width:600px) {
+    .uploadbtn {
+        display: none;
+    }
+}
