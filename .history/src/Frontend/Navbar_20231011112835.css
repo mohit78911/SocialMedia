@@ -1,0 +1,22 @@
+.navbarMainClass {
+    width: fit-content;
+}
+
+.headerimg {
+    border-radius: 50%;
+}
+
+.navbtnoptions {
+    display: grid;
+}
+
+
+.navlinkbtn {
+    text-decoration: none;
+    color: black;
+}
+
+.navInput{
+    margin-right: 3vh;
+    padding: 5px;
+}
