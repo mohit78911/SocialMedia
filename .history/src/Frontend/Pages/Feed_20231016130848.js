@@ -49,7 +49,7 @@ export default function Feed({
       .get("http://localhost:6600/post")
       .then((res) => {
         setPost(res.data);
-        console.log("post_Data", res.data);
+        console.log("postdata", res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +64,6 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
       })
       .catch((error) => {
         console.log(error);
@@ -72,9 +71,9 @@ export default function Feed({
   };
 
   //get_comment_data
-  const getCommentDataHandler = () => {
+  const getCommentDataHandler = (postId) => {
     axios
-      .get(`http://localhost:6600/comment`, {
+      .get(`http://localhost:6600/comment/${ }`, {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -260,7 +259,10 @@ export default function Feed({
                       <Box>
                         {comments.map((value) => {
                           return (
-                            <Box className="mainCommentBox" key={value._id}>
+                            <Box
+                              className="mainCommentBox"
+                              key={value.postId._id}
+                            >
                               <Box className="commentBox">
                                 <Box
                                   component="img"

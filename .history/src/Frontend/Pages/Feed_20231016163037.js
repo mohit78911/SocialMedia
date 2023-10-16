@@ -64,7 +64,7 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
+        console.log("like_length", likedata.length);
       })
       .catch((error) => {
         console.log(error);
@@ -78,6 +78,7 @@ export default function Feed({
         headers: { authorization: token },
       })
       .then((result) => {
+        console.log("postIdinthefunction", postId);
         setComments(result.data);
       })
       .catch((error) => {

@@ -24,7 +24,7 @@ export default function SocialMedia() {
 
   //  ---------------------------InputData------------------------------------
 
-  //null_value_after_form_submited
+  //null value after form_submited
   const nullValueHandler = () => {
     setName("");
     setEmail("");

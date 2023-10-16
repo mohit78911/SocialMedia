@@ -32,7 +32,7 @@ export default function Feed({
   //get_user_data
   const getUsersDataHandlers = () => {
     axios
-      .get("http://localhost:6600/user")
+      .get("http://localhost:6600/user/")
       .then((res) => {
         setAllUsers(res.data);
         console.log("allusers", res.data);
@@ -64,7 +64,7 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
+        console.log("like_length", likedata.length);
       })
       .catch((error) => {
         console.log(error);

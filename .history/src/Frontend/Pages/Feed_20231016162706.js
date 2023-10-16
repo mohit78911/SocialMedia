@@ -64,7 +64,7 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
+        console.log("like_length", likedata.length);
       })
       .catch((error) => {
         console.log(error);
@@ -73,8 +73,9 @@ export default function Feed({
 
   //get_comment_data
   const getCommentDataHandler = () => {
+    const postId
     axios
-      .get(`http://localhost:6600/comment`, {
+      .get(`http://localhost:6600/comment/${}`, {
         headers: { authorization: token },
       })
       .then((result) => {

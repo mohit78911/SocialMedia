@@ -49,7 +49,7 @@ export default function Feed({
       .get("http://localhost:6600/post")
       .then((res) => {
         setPost(res.data);
-        console.log("post_Data", res.data);
+        console.log("postdata", res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +64,6 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
       })
       .catch((error) => {
         console.log(error);
@@ -74,11 +73,11 @@ export default function Feed({
   //get_comment_data
   const getCommentDataHandler = () => {
     axios
-      .get(`http://localhost:6600/comment`, {
+      .get("http://localhost:6600/comment", {
         headers: { authorization: token },
       })
       .then((result) => {
-        setComments(result.data);
+        setComments(result.data.postId);
       })
       .catch((error) => {
         console.log(error);
@@ -258,31 +257,31 @@ export default function Feed({
                   <Box onClick={() => setPostId(value.postId._id)}>
                     {commentBox ? (
                       <Box>
-                        {comments.map((value) => {
-                          return (
-                            <Box className="mainCommentBox" key={value._id}>
-                              <Box className="commentBox">
-                                <Box
-                                  component="img"
-                                  src={value ? value.userId.userprofile : null}
-                                  width={40}
-                                  className="profile"
-                                />
-                                &nbsp;&nbsp;
-                                <Typography
-                                  sx={{ opacity: "0.7", marginTop: "1vh" }}
-                                >
-                                  {value ? value.comment : null}
-                                </Typography>
-                              </Box>
-                              <Button
-                                onClick={() => commentDeleteHandler(value._id)}
+                        {comments && (
+                          <Box className="mainCommentBox" >
+                            <Box className="commentBox">
+                              <Box
+                                component="img"
+                                src={
+                                  comments ? comments.userId.userprofile : undefined
+                                }
+                                width={40}
+                                className="profile"
+                              />
+                              &nbsp;&nbsp;
+                              <Typography
+                                sx={{ opacity: "0.7", marginTop: "1vh" }}
                               >
-                                <DeleteIcon />
-                              </Button>
+                                {comments ? comments.comment : undefined}
+                              </Typography>
                             </Box>
-                          );
-                        })}
+                            <Button
+                              onClick={() => commentDeleteHandler(value._id)}
+                            >
+                              <DeleteIcon />
+                            </Button>
+                          </Box>
+                        )}
                       </Box>
                     ) : (
                       <Box className="InputCommentBox">

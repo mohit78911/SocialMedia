@@ -49,7 +49,7 @@ export default function Feed({
       .get("http://localhost:6600/post")
       .then((res) => {
         setPost(res.data);
-        console.log("post_Data", res.data);
+        console.log("postdata", res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +64,6 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +71,7 @@ export default function Feed({
   };
 
   //get_comment_data
-  const getCommentDataHandler = () => {
+  const getCommentDataHandler = (id) => {
     axios
       .get(`http://localhost:6600/comment`, {
         headers: { authorization: token },

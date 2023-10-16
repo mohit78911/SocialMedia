@@ -49,7 +49,7 @@ export default function Feed({
       .get("http://localhost:6600/post")
       .then((res) => {
         setPost(res.data);
-        console.log("post_Data", res.data);
+        console.log("postdata", res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +64,6 @@ export default function Feed({
       })
       .then((result) => {
         setLikeData(result.data);
-        console.log("like_length", likedata.like);
       })
       .catch((error) => {
         console.log(error);
@@ -74,11 +73,11 @@ export default function Feed({
   //get_comment_data
   const getCommentDataHandler = () => {
     axios
-      .get(`http://localhost:6600/comment`, {
+      .get("http://localhost:6600/comment", {
         headers: { authorization: token },
       })
       .then((result) => {
-        setComments(result.data);
+        setComments(result.data.postId);
       })
       .catch((error) => {
         console.log(error);
@@ -161,20 +160,22 @@ export default function Feed({
       });
   };
 
-  useEffect(() => {
-    if (comments && comments.length <= 0) {
-      setCommentBox(false);
-    }
-  });
+  // useEffect(() => {
+  //   if (comments.length <= 0) {
+  //     setCommentBox(false);
+  //   }
+  // });
 
-  // const [updatedComment, setUpdatedComment] = useState();
-  // const filterCommentData = () => {
-  //   const filterComment = comments.filter(
-  //     (cmt) => cmt.postId === likedata.postId
-  //   );
-  //   setUpdatedComment(filterComment);
-  // };
+  const [updatedComment, setUpdatedComment] = useState();
+  const filterCommentData = () => {
+    const filterComment = comments.filter(
+      (cmt) => cmt.postId === likedata.postId
+    );
+    setUpdatedComment(filterComment);
+  };
   // console.log("updateComment", updatedComment);
+
+  console.log("all quary's",JSON.stringify(req.query))
   return (
     <>
       {/* <button onClick={filterCommentData}>click</button> */}
@@ -264,7 +265,9 @@ export default function Feed({
                               <Box className="commentBox">
                                 <Box
                                   component="img"
-                                  src={value ? value.userId.userprofile : null}
+                                  src={
+                                    value ? value.userId.userprofile : undefined
+                                  }
                                   width={40}
                                   className="profile"
                                 />
@@ -272,7 +275,7 @@ export default function Feed({
                                 <Typography
                                   sx={{ opacity: "0.7", marginTop: "1vh" }}
                                 >
-                                  {value ? value.comment : null}
+                                  {value ? value.comment : undefined}
                                 </Typography>
                               </Box>
                               <Button
