@@ -94,7 +94,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
   //get_comment_data
   const getCommentDataHandler = (postId) => {
     axios
-      .get(`http://localhost:6600/comment/${postId}`, {
+      .get(`http://localhost:6600/post/${postId}/comments`, {
         headers: { authorization: token },
       })
       .then((result) => {

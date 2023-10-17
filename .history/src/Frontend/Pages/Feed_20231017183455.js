@@ -94,7 +94,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
   //get_comment_data
   const getCommentDataHandler = (postId) => {
     axios
-      .get(`http://localhost:6600/comment/${postId}`, {
+      .get(`http://localhost:6600/post/${postId}/comments`, {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -174,7 +174,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .delete(`http://localhost:6600/comment/delete/${id}`)
       .then(() => {
         console.log(`commentDeleted ${id}`);
-        // getCommentDataHandler();
+        getCommentDataHandler();
       })
       .catch((error) => {
         console.log(error);

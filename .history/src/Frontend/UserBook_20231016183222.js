@@ -55,31 +55,38 @@ function UserBook({ userData, like, setLike, likePost }) {
   // }, []);
 
   //adding_post_data
+  
 
   return (
-    <div className="mainAppClass">
-      <Navbar users={users} />
-      <div className="flex-container">
-        <div className="one">
-          <Details />
-        </div>
-        <div className="two">
-          <Feed
-            userData={userData}
-            like={like}
-            setlike={setLike}
-            likePost={likePost}
-            users={users}
-            handleClickOpen={handleClickOpen}
-            handleClose={handleClose}
-            open={open}
-          />
-        </div>
-        <div className="three">
-          <Activity />
+     
+      <div className="mainAppClass">
+        <Navbar users={users} />
+        <div className="flex-container">
+          <div className="one">
+            <Details />
+          </div>
+          <div className="two">
+            <Feed
+              userData={userData}
+              like={like}
+              setlike={setLike}
+              likePost={likePost}
+              users={users}
+              postDataHandling={postDataHandling}
+              description={description}
+              setDescription={setDescription}
+              
+              handleClickOpen={handleClickOpen}
+              handleClose={handleClose}
+              open={open}
+            />
+          </div>
+          <div className="three">
+            <Activity />
+          </div>
         </div>
       </div>
-    </div>
+   
   );
 }
 

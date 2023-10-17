@@ -174,7 +174,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .delete(`http://localhost:6600/comment/delete/${id}`)
       .then(() => {
         console.log(`commentDeleted ${id}`);
-        // getCommentDataHandler();
+        getCommentDataHandler();
       })
       .catch((error) => {
         console.log(error);
@@ -187,11 +187,11 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
     }
   });
 
-  // const [updatedComment, setUpdatedComment] = useState();
-  // const filterCommentData = () => {
-  //   const filterComment = comments.filter(
-  //     (cmt) => cmt.postId === likedata.postId
-  //   );
+    // const [updatedComment, setUpdatedComment] = useState();
+    // const filterCommentData = () => {
+    //   const filterComment = comments.filter(
+    //     (cmt) => cmt.postId === likedata.postId
+    //   );
   //   setUpdatedComment(filterComment);
   // };
   // console.log("updateComment", updatedComment);

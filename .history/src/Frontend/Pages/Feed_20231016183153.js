@@ -9,19 +9,27 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import { motion } from "framer-motion";
 
-export default function Feed({ users, handleClickOpen, handleClose, open }) {
+export default function Feed({
+  users,
+  postDataHandling,
+  description,
+  setDescription,
+  image,
+  setImage,
+  handleClickOpen,
+  handleClose,
+  open,
+}) {
   const [commentBox, setCommentBox] = useState(false);
   const [likedata, setLikeData] = useState([]);
   const [comments, setComments] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
-
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
   const token = localStorage.getItem("token");
 
   const toggleCommentBox = () => {
     setCommentBox(!commentBox);
   };
+
 
   const postDataHandling = (e) => {
     e.preventDefault();
@@ -41,7 +49,6 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
           toast.success("Post Added Done!");
           // getPostDataHandler();
           console.log("Post Added Done.");
-          getUsersDataHandlers();
           handleClose();
         })
         .catch((error) => {
@@ -92,9 +99,9 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
   };
 
   //get_comment_data
-  const getCommentDataHandler = (postId) => {
+  const getCommentDataHandler = () => {
     axios
-      .get(`http://localhost:6600/comment/${postId}`, {
+      .get(`http://localhost:6600/comment`, {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -122,7 +129,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .then((res) => {
         setCommentBox(true);
         setPostComment("");
-        // getCommentDataHandler();
+        getCommentDataHandler();
         console.log("Comment Post Successfully!");
         toast.success("Comment Post Successfully!");
       })
@@ -164,7 +171,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
   useEffect(() => {
     getPostDataHandler();
     getLikeDataHandler();
-
+    getCommentDataHandler();
     getUsersDataHandlers();
   }, []);
 
@@ -174,7 +181,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .delete(`http://localhost:6600/comment/delete/${id}`)
       .then(() => {
         console.log(`commentDeleted ${id}`);
-        // getCommentDataHandler();
+        getCommentDataHandler();
       })
       .catch((error) => {
         console.log(error);
@@ -272,12 +279,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
                         </motion.a>
                       )}
                     </Button>
-                    <Button onClick={toggleCommentBox}>toggleShow</Button>
-                    <Button
-                      onClick={() => getCommentDataHandler(value.postId._id)}
-                    >
-                      comments
-                    </Button>
+                    <Button onClick={toggleCommentBox}>Comments</Button>
                   </Box>
                   {/* comment section */}
                   <Box onClick={() => setPostId(value.postId._id)}>

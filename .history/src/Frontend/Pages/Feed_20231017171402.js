@@ -92,9 +92,9 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
   };
 
   //get_comment_data
-  const getCommentDataHandler = (postId) => {
+  const getCommentDataHandler = () => {
     axios
-      .get(`http://localhost:6600/comment/${postId}`, {
+      .get(`http://localhost:6600/comment`, {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -122,7 +122,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .then((res) => {
         setCommentBox(true);
         setPostComment("");
-        // getCommentDataHandler();
+        getCommentDataHandler();
         console.log("Comment Post Successfully!");
         toast.success("Comment Post Successfully!");
       })
@@ -174,7 +174,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
       .delete(`http://localhost:6600/comment/delete/${id}`)
       .then(() => {
         console.log(`commentDeleted ${id}`);
-        // getCommentDataHandler();
+        getCommentDataHandler();
       })
       .catch((error) => {
         console.log(error);
@@ -272,12 +272,7 @@ export default function Feed({ users, handleClickOpen, handleClose, open }) {
                         </motion.a>
                       )}
                     </Button>
-                    <Button onClick={toggleCommentBox}>toggleShow</Button>
-                    <Button
-                      onClick={() => getCommentDataHandler(value.postId._id)}
-                    >
-                      comments
-                    </Button>
+                    <Button onClick={toggleCommentBox}>Comments</Button>
                   </Box>
                   {/* comment section */}
                   <Box onClick={() => setPostId(value.postId._id)}>

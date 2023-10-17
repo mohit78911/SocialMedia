@@ -72,7 +72,7 @@ function UserBook({ userData, like, setLike, likePost }) {
             users={users}
             handleClickOpen={handleClickOpen}
             handleClose={handleClose}
-            open={open}
+            open={ope n}
           />
         </div>
         <div className="three">
