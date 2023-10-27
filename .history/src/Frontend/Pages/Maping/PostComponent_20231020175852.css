@@ -1,0 +1,17 @@
+
+
+
+
+
+.userLikeImg {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.likesComponent {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px;
+}
+   
