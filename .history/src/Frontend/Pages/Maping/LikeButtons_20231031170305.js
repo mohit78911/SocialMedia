@@ -5,39 +5,30 @@ import { motion } from "framer-motion";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
+function LikeButtons({ value, likePostHandler, user }) {
   const [likeData, setLikeData] = useState([]);
-  const [filterData, setFilterData] = useState();
 
-  const getLikesDataHandler = () => {
-    axios
-      .get("http://localhost:6600/likes/likes")
-      .then((result) => {
-        setLikeData(result.data);
-      })
-      .catch((error) => {
+  const likesFilterDataHa
+
+  useEffect(() => {
+    const likesFilterDataHandler = async () => {
+      try {
+        const response = await axios.get(`http://localhost:6600/likes`);
+        setLikeData(response.data);
+
+        const userLikedPost = response.data.some(
+          (item) => item.userId === user._id && item.postId === value._id
+        );
+        setFilterData(userLikedPost);
+      } catch (error) {
         console.log(error);
-      });
+      }
+    };
 
     likesFilterDataHandler();
-  };
+  }, [user._id, value._id]);
 
-  useEffect(() => {
-    getLikesDataHandler();
-  });
-
-  //likesFiltering_with_someArrayMethod
-  const likesFilterDataHandler = () => {
-    const userLikedPost = likeData.some(
-      (item) => item.userId === user._id && item.postId === value._id
-    );
-    setFilterData(userLikedPost);
-  };
-
-  useEffect(() => {
-    likesFilterDataHandler();
-  }, []);
-
+  const [filterData, setFilterData] = useState();
   return (
     <Box>
       <Box>

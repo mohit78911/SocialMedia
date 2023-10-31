@@ -5,33 +5,33 @@ import { motion } from "framer-motion";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
+function LikeButtons({ value, likePostHandler, user }) {
   const [likeData, setLikeData] = useState([]);
+
   const [filterData, setFilterData] = useState();
 
-  const getLikesDataHandler = () => {
-    axios
-      .get("http://localhost:6600/likes/likes")
-      .then((result) => {
-        setLikeData(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
-    likesFilterDataHandler();
-  };
+  const getLikesDataHandler = ()=>{
+    axios.get("http://localhost:6600/likes").then((result)=>{
+      setLikeData(result.data)
+    }).catch((error)=>{
+      console.log(error)
+    })
+  }
 
-  useEffect(() => {
-    getLikesDataHandler();
-  });
+  useEffect(()=>{
+    getLikesDataHandler()
+  },[])
 
-  //likesFiltering_with_someArrayMethod
-  const likesFilterDataHandler = () => {
-    const userLikedPost = likeData.some(
-      (item) => item.userId === user._id && item.postId === value._id
-    );
-    setFilterData(userLikedPost);
+
+  const likesFilterDataHandler = async () => {
+      const userLikedPost = likeData.some(
+        (item) => item.userId === user._id && item.postId === value._id
+      );
+      setFilterData(userLikedPost);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -49,6 +49,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
               style={{ color: "red" }}
               onClick={() => {
                 likePostHandler(value._id);
+                likesFilterDataHandler();
               }}
             >
               <FavoriteIcon />
@@ -62,6 +63,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
               style={{ color: "skyblue" }}
               onClick={() => {
                 likePostHandler(value._id);
+                likesFilterDataHandler();
               }}
             >
               <FavoriteBorderIcon />

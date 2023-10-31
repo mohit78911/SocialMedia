@@ -11,23 +11,21 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
 
   const getLikesDataHandler = () => {
     axios
-      .get("http://localhost:6600/likes/likes")
+      .get("http://localhost:6600/likes")
       .then((result) => {
         setLikeData(result.data);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    likesFilterDataHandler();
   };
 
   useEffect(() => {
     getLikesDataHandler();
-  });
+  }, []);
 
-  //likesFiltering_with_someArrayMethod
-  const likesFilterDataHandler = () => {
+  const likesFilterDataHandler = async () => {
+    getLikesDataHandler();
     const userLikedPost = likeData.some(
       (item) => item.userId === user._id && item.postId === value._id
     );
@@ -36,7 +34,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
 
   useEffect(() => {
     likesFilterDataHandler();
-  }, []);
+  }, [getLikesDataHandler]);
 
   return (
     <Box>
@@ -62,6 +60,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
               style={{ color: "skyblue" }}
               onClick={() => {
                 likePostHandler(value._id);
+
               }}
             >
               <FavoriteBorderIcon />

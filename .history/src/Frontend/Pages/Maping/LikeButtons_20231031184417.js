@@ -11,15 +11,13 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
 
   const getLikesDataHandler = () => {
     axios
-      .get("http://localhost:6600/likes/likes")
+      .get("http://localhost:6600/likes")
       .then((result) => {
         setLikeData(result.data);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    likesFilterDataHandler();
   };
 
   useEffect(() => {

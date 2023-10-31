@@ -11,7 +11,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
 
   const getLikesDataHandler = () => {
     axios
-      .get("http://localhost:6600/likes/likes")
+      .get("http://localhost:6600/likes")
       .then((result) => {
         setLikeData(result.data);
       })
@@ -19,15 +19,7 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
         console.log(error);
       });
 
-    likesFilterDataHandler();
-  };
-
-  useEffect(() => {
-    getLikesDataHandler();
-  });
-
-  //likesFiltering_with_someArrayMethod
-  const likesFilterDataHandler = () => {
+    //filtering_Data_with_userId_and_postId
     const userLikedPost = likeData.some(
       (item) => item.userId === user._id && item.postId === value._id
     );
@@ -35,8 +27,20 @@ function LikeButtons({ value, likePostHandler, user, getPostDataHandler }) {
   };
 
   useEffect(() => {
-    likesFilterDataHandler();
+    getLikesDataHandler();
   }, []);
+
+  const likesFilterDataHandler = () => {
+    const userLikedPost = likeData.some(
+      (item) => item.userId === user._id && item.postId === value._id
+    );
+    setFilterData(userLikedPost)
+  };
+
+  useEffect(()=>{
+    likesFilterDataHandler()
+  })
+  
 
   return (
     <Box>

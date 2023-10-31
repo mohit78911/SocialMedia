@@ -27,7 +27,7 @@ export default function PostsComponent({
   getLikeDataHandler,
   likePostHandler,
   user,
-  getPostDataHandler,
+  getPostDataHandler
 }) {
   const [openComment, setOpenComment] = React.useState(false);
   const [openLikes, setOpenLikes] = React.useState(false);
@@ -132,7 +132,7 @@ export default function PostsComponent({
         setPostComment={setPostComment}
         postComment={postComment}
       />
-      {/* ------ dialog box for like ------ */}
+      {/* ----------- dialog box for like ------- */}
       <Dialog
         open={openLikes}
         TransitionComponent={Transition}
