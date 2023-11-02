@@ -1,0 +1,18 @@
+.errormsg {
+    height: 100vh;
+    background-image: url('https://freefrontend.com/assets/img/html-funny-404-pages/CodePen-404-Page.gif');
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+ error.error{
+    
+ }
+.box {
+  width: 200px;
+  height: 200px;
+  background: var(--accent);
+}
