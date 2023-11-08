@@ -1,0 +1,39 @@
+.Account {
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px rgb(196, 196, 196);
+    border: 1px solid rgb(212, 212, 212);
+
+}
+
+.buttons-container {
+    display: grid;
+
+}
+
+.buttons {
+    color: black;
+
+}
+
+.accBtn {
+    display: block;
+    word-break: break-all;
+}
+
+@media(max-width : 790px) {
+    .accBtn {
+        display: none;
+        color: rgb(189, 44, 44);
+    }
+
+    .accountlbl {
+        word-wrap: break-word;
+    }
+}
+
+.linkset{
+    display: flex;
+    ali
+}

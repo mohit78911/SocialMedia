@@ -1,0 +1,74 @@
+.navbarMainClass {
+    width: fit-content;
+}
+
+.headerimg {
+    border-radius: 50%;
+}
+
+.navbtnoptions {
+    display: grid;
+}
+
+.dropButtons {
+    display: grid;
+}
+
+.formControl {
+    display: flex;
+    justify-content: center;
+}
+
+.navlinkbtn {
+    text-decoration: none;
+    color: black;
+}
+
+.navSeachContain {
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 3vh;
+    margin-right: 3vh;
+    padding: 1vh;
+    padding-left: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.navInput {
+    display: block;
+    border: none;
+    background: transparent;
+}
+
+.navInput:focus {
+    outline: none;
+}
+
+@media(max-width : 600px) {
+    .navSeachContain {
+        border: none;
+    }
+
+    .navInput {
+        display: none;
+    }
+}
+
+
+/* animation Css just for trial */
+.animationSlider {
+    position: relative;
+    animation: mymove 2s infinite;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes mymove {
+    from {
+        left: -20px;
+    }
+
+    to {
+        left: 30px;
+    }
+}

@@ -1,0 +1,36 @@
+ 
+
+.mainContaineProfile {
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+}
+
+.firstContaine {
+    flex: 6;
+    display: flex;
+    justify-content: center;
+}
+
+.secondContaine {
+    flex: 6;
+    display: flex;
+    justify-content: center;
+}
+
+.centerEditContaine {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editProfileimg {
+    width: 22vh;
+    border-radius: 50%;
+    border: 1px solid rgb(236, 236, 236);
+}
+
+.editprofileinfo {
+    display: flex;
+    justify-content: center;
+}

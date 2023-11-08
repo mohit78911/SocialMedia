@@ -1,0 +1,17 @@
+.flexContaine{
+di
+}
+
+
+
+.friendListMainClass {
+ 
+    border: 1px solid black;
+    padding: 5px;
+    flex: 4;
+}
+
+.friendlistbox {
+    border: 1px solid black;
+    display: grid;
+}

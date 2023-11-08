@@ -1,0 +1,32 @@
+.editprofileInfo{
+    display: flex;
+    
+}
+
+
+
+.editComponent {
+    width: 100%;
+}
+
+
+.inputfields {
+    display: table-caption;
+    text-align: center;
+}
+
+.containe {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.updateinput {
+    border: none;
+    margin: 10px;
+    text-align: center;
+}
+
+.updateinput:focus {
+    outline: none;
+}

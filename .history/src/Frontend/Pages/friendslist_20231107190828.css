@@ -1,0 +1,67 @@
+.flexContaine {
+    display: flex;
+}
+
+
+
+.friendListMainClass {
+    border-radius: 10px;
+    padding: 5px;
+    flex: 3;
+    margin: 15px;
+
+}
+
+.friendsitem {
+    box-shadow: 0px 0px 30px #dadada;
+
+}
+
+.friendNameLogo {
+    text-align: center;
+    background: rgb(242, 242, 242);
+    border-radius: 7px;
+    color: rgb(56, 56, 56);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.secondFriendlist {
+    flex: 8;
+}
+
+.friendlistbox {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.friendlistimg {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.menu {
+    width: 300px;
+     
+}
+
+.friendsdatamaping{
+    
+
+.friendsListBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
