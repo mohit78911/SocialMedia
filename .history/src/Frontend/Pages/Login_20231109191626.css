@@ -1,0 +1,165 @@
+.loginBackground {
+    background-image: url('https://mss-p-053.stylelabs.cloud/api/public/content/e2d0a866cca94a8bb80cdf14bd2427dc?v=54ca61ce');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
+    height: 100vh;
+    padding-top: 8vh;
+}
+
+
+.flex-contain {
+    display: flex;
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 7px;
+    box-shadow: 0px 0px 66px rgb(134, 134, 134);
+    margin: 0vh auto;
+    width: 60%;
+    padding: 10px;
+    /* margin-top: 7vh; */
+}
+
+.oneContain {
+    display: block;
+    flex: 8;
+}
+
+.imglogin {
+    border-radius: 7px;
+    max-width: 100%;
+    height: -webkit-fill-available;
+}
+
+.secondContain {
+    flex: 4;
+    margin: 15px;
+    text-align: left;
+}
+
+.loginContainer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textLogin {
+    margin-top: 8vh;
+}
+
+.welcomeLogo {
+    color: #5ac8fa;
+}
+
+.descriptiontxt {
+    opacity: 0.5
+}
+
+.loginbtncomponent {
+    width: 100%;
+}
+
+.loginbtn {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoo1ENx_0_TPiijr15UgBHT-_-jkjTNnL1fQ&usqp=CAU');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.loginanimation:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    font-weight: bolder;
+    color: transparent;
+    text-shadow:0px 0px 5px black ;
+}
+
+.linktag {
+    text-decoration: none;
+    color: #5ac8fa;
+}
+
+@media(max-width : 750px) {
+    .flex-contain {
+
+        width: 80%;
+    }
+
+    .welcomeLogo {
+        color: rgb(212, 54, 54);
+        word-wrap: break-word;
+    }
+
+    .oneContain {
+        display: none;
+    }
+
+    .textLogin {
+        margin-top: 3vh;
+    }
+
+    .loginContainer {
+        width: 100%;
+    }
+
+    .inputlogin {
+        width: 100%;
+    }
+
+    .firsttxt {
+        width: 100%;
+        word-wrap: break-word;
+        color: black;
+    }
+
+    .descriptiontxt {
+        width: 100%;
+        word-wrap: break-word;
+        opacity: 0.8;
+    }
+
+    .secondContain {
+        width: 100%;
+    }
+
+    .switchpage {
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .showpassword {
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .loginbtn {
+        background-image: url('https://t4.ftcdn.net/jpg/02/11/76/45/360_F_211764596_UMNEMDa6LtaoKYuzLjjBEt82AyaLYcyt.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        border-radius: 5px;
+    }
+
+    .loginbtncomponent {
+        width: 100%;
+    }
+
+    .alreadyhaveacc {
+        text-align: center;
+    }
+
+    .linktag {
+        text-decoration: none;
+        color: rgb(212, 54, 54);
+    }
+}
+
+@media(max-width : 600px) {
+    .flex-contain {
+        width: 90%;
+    }
+
+    .linktag {
+        text-decoration: none;
+        color: rgb(212, 54, 54);
+    }
+}
