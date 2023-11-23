@@ -1,0 +1,23 @@
+.ui-Friends {
+    margin-top: 20px;
+}
+
+.Ui-friendsComponent {
+    display: flex;
+    justify-content: center;
+}
+
+.Ui-friendsList {
+    display: grid;
+
+}
+
+.Ui-friendsAlign {
+    border: 1px solid gray;
+    box-shadow: 0px 0px 5px rgb(204, 204, 204);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 2px ;
+    padding: 2px;
+}

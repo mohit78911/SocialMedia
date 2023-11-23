@@ -1,0 +1,12 @@
+.flexUi {
+    display: flex;
+}
+
+.Ui_First {
+    flex: 3;
+    border: 1px solid black;
+}
+
+.Ui_Second {
+    flex: 9;
+}

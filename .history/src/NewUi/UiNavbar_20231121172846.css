@@ -1,0 +1,16 @@
+.Ui-nav {
+    display: flex;
+    justify-content: space-between;
+    ali
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}

@@ -1,0 +1,25 @@
+.Ui-nav {
+    display: flex;
+    justify-content: soa';
+    align-items: center;
+    padding: 15px;
+}
+
+
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+
+.UiNav-btns {}
+
+.NavUI-btn {
+    padding-right: 5px;
+    text-decoration: none;
+    color: black;
+}
+.NavUI-btn:hover{
+    color: rgb(175, 175, 175);
+}

@@ -1,0 +1,138 @@
+import React from "react";
+import "./UiNavbar.css";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Box, Button } from "@mui/material";
+ 
+
+export default function UINavbar() {
+  //navigation from react router dom
+  const location = useNavigate();
+  const logOutHandler = () => {
+    location("/");
+    localStorage.removeItem("userLoginData");
+    localStorage.removeItem("userDetails");
+    localStorage.removeItem("token");
+  };
+
+  return (
+    <div>
+      <nav className="Ui-nav">
+        <div className="UiNav-logo">
+          SOC<span style={{ color: "rgb(206, 49, 49)" }}>i</span>LMED
+          <span style={{ color: "rgb(206, 49, 49)" }}>i</span>A
+        </div>
+         
+        <div className="UiNav-btns">
+          <div className="NavUI-btn">
+          <Box sx={{ flexGrow: 0 }}>
+              <Tooltip>
+                <Button
+                  onClick={() => {
+                    handleOpenRequestBox();
+                  }}
+                >
+                  <PeopleAltIcon />
+                  {requests &&
+                    requests.filter((item) => item.receiver === user._id)
+                      .length}
+                </Button>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={friendRequest}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(friendRequest)}
+                onClose={handleCloseRequestBox}
+              >
+                <MenuItem onClick={handleCloseRequestBox}>
+                  {/* Friend_request data aayega yaha par */}
+                  {loadingDot ? (
+                    <Box className="commentloadinglogo">
+                      <Box
+                        component="img"
+                        src="https://miro.medium.com/v2/resize:fit:978/0*cWpsf9D3g346Va20.gif"
+                        width={150}
+                      />
+                    </Box>
+                  ) : (
+                    <Box className="requestContainer">
+                      {requestData.length === 0 ? (
+                        <Typography
+                          sx={{
+                            color: "skyblue",
+                            display: "grid",
+                          }}
+                        >
+                          <Box sx={{ textAlign: "center" }}>
+                            <SentimentVeryDissatisfiedIcon />
+                          </Box>
+                          NO Requests
+                        </Typography>
+                      ) : (
+                        <Box>
+                          {requestData.map((item, i) => {
+                            return (
+                              <Box className="requestContaine" key={i}>
+                                <Box className="alignRequest">
+                                  <Box
+                                    className="requestimg"
+                                    component="img"
+                                    src={item.sender.userprofile}
+                                  />
+                                  <Typography>{item.sender.name}</Typography>
+                                </Box>
+                                <Box className="requestbtn">
+                                  <button
+                                    onClick={() =>
+                                      acceptFriendRequestHandler(
+                                        item.receiver._id
+                                      )
+                                    }
+                                    className="btn btn-primary m-1"
+                                  >
+                                    Accept
+                                  </button>
+                                  <button
+                                    onClick={() => {
+                                      // getAllRequestDataHandler();
+                                      requestDeleteHandler(user._id);
+                                      console.log("id", item._id);
+                                    }}
+                                    className="btn btn-danger m-1"
+                                  >
+                                    Reject
+                                  </button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Box>
+                      )}
+                    </Box>
+                  )}
+                </MenuItem>
+              </Menu>
+            </Box>
+            <NavLink to="/ui/home" className="NavUI-btn">
+              Home
+            </NavLink>
+            <NavLink className="NavUI-btn">Contact</NavLink>
+            <NavLink to="/ui/about" className="NavUI-btn">
+              About
+            </NavLink>
+            <NavLink className="NavUI-btn">Help</NavLink>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}

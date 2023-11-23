@@ -1,0 +1,17 @@
+.Ui-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul{
+}
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+ 
+}
+li{
+    display: flex;
+    align-items: center;
+}

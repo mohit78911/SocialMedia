@@ -1,0 +1,18 @@
+.Ui-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+ 
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+ 
+.UiNav-btns{
+    padding: 5px;
+}

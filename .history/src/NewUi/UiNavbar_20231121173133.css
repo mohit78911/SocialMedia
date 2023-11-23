@@ -1,0 +1,20 @@
+.Ui-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+ul li a{
+    display: flex;
+    align-items: center;
+}

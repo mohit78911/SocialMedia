@@ -1,0 +1,48 @@
+
+
+
+.Ui-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    background-color: rgb(0, 0, 0);
+    padding-left:  5vh;
+    padding-right: 10px;
+}
+
+
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+
+.UiNav-logo {
+    font-weight: bolder;
+    color: white;
+}
+
+.NavUI-btn {
+    padding-right: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.NavUI-btn:hover {
+    color: rgb(206, 49, 49);
+}
+
+.Ui-requestBox {
+    color: white;
+}
+
+.Ui-requestBox:hover {
+    color: rgb(206, 49, 49);
+}
+
+.Ui-navContaine {
+    display: flex;
+    align-items: center;
+}

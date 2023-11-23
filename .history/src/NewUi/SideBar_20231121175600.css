@@ -1,0 +1,10 @@
+.UISideBar{
+    border-top: 1px solid rgb(235, 235, 235);
+    padding-top: 10px;
+    padding-left: 2vh;
+}
+.sideBar-profile{
+    border: 1px solid gray;
+    background-color: gray;
+    border-radius: 8px;
+}

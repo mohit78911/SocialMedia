@@ -1,0 +1,15 @@
+
+
+
+
+
+.flexUi{
+    display: flex;
+}
+.Ui_First{
+    flex: 3;
+}
+
+.Ui_Second{
+    flex: ;
+}

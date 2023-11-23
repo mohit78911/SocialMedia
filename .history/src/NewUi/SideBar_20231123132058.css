@@ -1,0 +1,33 @@
+.UISideBar {
+    padding-top: 10px;
+}
+
+.sideBarButtons {
+    margin-left: 1vh;
+    margin-right: 1vh;
+    display: grid;
+}
+
+.sideBar-profile {
+    border: 1px solid rgb(241, 241, 241);
+    background-color: rgb(241, 241, 241);
+    border-radius: 8px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+ 
+.UiLinkBtn {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.UiLinkBtn:hover {
+    color: rgb(206, 49, 49);
+
+    transition: 0.3s;
+
+}

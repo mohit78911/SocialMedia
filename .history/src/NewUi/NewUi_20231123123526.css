@@ -1,0 +1,20 @@
+.Ui_Navbar {
+    background-color: white;
+    /* padding: 13px; */
+}
+
+.flexUi {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+.Ui_First {
+    flex: 2;
+   border-right: 1px solid black;
+    height: auto;
+    border-radius: 0px 0px 15px 0px;
+}
+
+.Ui_Second {
+    flex: 10;
+}

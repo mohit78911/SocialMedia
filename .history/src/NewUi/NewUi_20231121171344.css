@@ -1,0 +1,22 @@
+
+
+
+ 
+.flexUi {
+    display: flex;
+    background-color: rgb(236, 236, 236);
+}
+
+.Ui_First {
+    flex: 2;
+     
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    border-radius: 0px 15px 5px 0px;
+}
+
+.Ui_Second {
+    flex: 10;
+    height: 100vh;
+
+}

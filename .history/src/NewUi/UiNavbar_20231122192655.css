@@ -1,0 +1,27 @@
+.Ui-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px;
+    background-color: rgb(0, 0, 0);
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+
+.UiNav-logo {
+    font-weight: bolder;
+}
+
+.NavUI-btn {
+    padding-right: 5px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.NavUI-btn:hover {
+    color: rgb(206, 49, 49);
+}

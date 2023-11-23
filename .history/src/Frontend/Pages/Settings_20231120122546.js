@@ -1,0 +1,107 @@
+import { Box, Typography, Button } from "@mui/material";
+import React, { useEffect, useState } from "react";
+
+import Navbar from "../Navbar";
+import ".//Setting.css";
+import EditProfileData from "./EditProfileData";
+import FriendsList from "./FriendsList";
+// --------------------------------------
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="right" ref={ref} {...props} />;
+});
+
+export default function Settings({
+  user,
+  users,
+  requests,
+  loadingDot,
+  requestData,
+  getRequestHandler,
+  requestCancelHandler,
+}) {
+  const [editbtn, setEditBtn] = useState(false);
+  const [userDetail, setUserDetail] = useState([]);
+  const userDetails = () => {
+    const getDetails = localStorage.getItem("userDetails");
+    const details = JSON.parse(getDetails);
+    // console.log("details", details);
+    setUserDetail(details);
+  };
+
+  const handleClickOpen = () => {
+    setEditBtn(true);
+  };
+
+  const handleClose = () => {
+    setEditBtn(false);
+  };
+
+  useEffect(() => {
+    userDetails();
+  }, []);
+
+  return (
+    <Box>
+      <Navbar
+        users={users}
+        requestData={requestData}
+        loadingDot={loadingDot}
+        requests={requests}
+        getRequestHandler={getRequestHandler}
+        requestCancelHandler={requestCancelHandler}
+      />
+      <Box className="mainContaineProfile">
+        <Box className="centerEditContaine">
+          <Box
+            className="editProfileimg"
+            component="img"
+            src={userDetail.userprofile}
+          />
+          <Typography sx={{ fontWeight: "bold", marginTop: "8px" }}>
+            {userDetail.name}
+          </Typography>
+          <Typography>{userDetail.email}</Typography>
+          <Typography>{userDetail.dob}</Typography>
+          <Typography>
+            {userDetail.phonenumber ? (
+              <Typography>+91 {userDetail.phonenumber}</Typography>
+            ) : null}
+          </Typography>
+          <Button onClick={handleClickOpen}>Edit Profile</Button>
+        </Box>
+      </Box>
+      <Box>
+        <FriendsList user={user} />
+      </Box>
+
+      {/*dialog box for mui */}
+      <Box>
+        <Dialog
+          open={editbtn}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle>{"EDIT YOUR PROFILE INFORMATION"}</DialogTitle>
+          <DialogContent>
+            <Box className="editprofileinfo">
+              <Box>
+                <EditProfileData userDetails={userDetails} />
+              </Box>
+            </Box>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Close</Button>
+          </DialogActions>
+        </Dialog>
+      </Box>
+    </Box>
+  );
+}

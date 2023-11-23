@@ -1,0 +1,9 @@
+.Ui-friendsList {
+    display: grid;
+    text-align: center;
+}
+
+.Ui-friendsAlign {
+    display: flex;
+    align-items: center;
+}

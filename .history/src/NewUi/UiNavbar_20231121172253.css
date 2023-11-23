@@ -1,0 +1,9 @@
+.Ui-nav{
+    display: flex;
+    justify-content: space-between;
+}
+ul li {
+    list-style-type: none;
+    display: inline;
+    padd
+}

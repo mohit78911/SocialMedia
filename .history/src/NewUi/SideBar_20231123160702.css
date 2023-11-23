@@ -1,0 +1,37 @@
+.UISideBar {
+    padding-top: 10px;
+}
+
+.sideBarButtons {
+    margin-left: 1vh;
+    margin-right: 1vh;
+    display: grid;
+}
+
+
+
+.UiLinkBtn {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.UiLinkBtn:hover {
+    color: rgb(206, 49, 49);
+
+    transition: 0.3s;
+
+}
+
+.UI-sidebtnshow {
+    display: block;
+}
+
+
+@media (max-width : 500px) {
+    .UI-sidebtnshow {
+        display: noen;
+    }
+}
